@@ -18,6 +18,8 @@ O Brizas-bot é um bot do modificado do [MhankBar](https://github.com/MhankBarBa
 
 # Instalação
 
+[termux](https://play.google.com/store/apps/details?id=com.termux&hl=pt_BR&gl=US)
+
 ```
 git clone https://github.com/ianmsfvenom/Brizas-bot
 cd Brizas-bot
