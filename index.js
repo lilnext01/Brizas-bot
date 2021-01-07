@@ -147,7 +147,7 @@ async function starts() {
 			const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
 			const isGroupAdmins = groupAdmins.includes(sender) || false
 			const isWelkom = isGroup ? welkom.includes(from) : false
-			const isNsfw = isGroup ? nsfw.includes(from) : true
+			const isNsfw = true
 			const isSimi = isGroup ? samih.includes(from) : false
 			const isOwner = ownerNumber.includes(sender)
 			const isUrl = (url) => {
@@ -363,22 +363,26 @@ async function starts() {
 					})
 					break
 					case 'nsfwloli':
-					if (isGroupAdmins) {
-						loli.getNSFWLoli(async (err, res) => {
-							if (err) return reply('❌ *ERROR* ❌')
-							buffer = await getBuffer(res.url)
-							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Tu é punheteiro em mlk, toma aq e me deixa'})
-						})
-					}
-					else if(!isGroup)
+					if(isNsfw)
 					{
-						loli.getNSFWLoli(async (err, res) => {
+						if (isGroupAdmins) {
+							loli.getNSFWLoli(async (err, res) => {
 							if (err) return reply('❌ *ERROR* ❌')
 							buffer = await getBuffer(res.url)
 							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Tu é punheteiro em mlk, toma aq e me deixa'})
-						})
+							})
+						}
+						else if(!isGroup)
+						{
+							loli.getNSFWLoli(async (err, res) => {
+							if (err) return reply('❌ *ERROR* ❌')
+							buffer = await getBuffer(res.url)
+							client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Tu é punheteiro em mlk, toma aq e me deixa'})
+							})
+						}
+						else return reply('❌*SOMENTE NO PV E ADMS ESTE COMANDO ESTA DISPONIVEL*❌')
 					}
-					else return reply('❌*SOMENTE NO PV E ADMS ESTE COMANDO ESTA DISPONIVEL*❌')
+					else return reply('❌*COMANDO DESATIVADO*❌')
 					break
 				/*case 'nsfwloli':
 					if (!isGroupAdmins) return reply('❌*SOMENTE NO PV E ADMS ESTE COMANDO ESTA DISPONIVEL*❌')
