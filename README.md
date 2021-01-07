@@ -7,6 +7,7 @@
 - [O que é?](#-O-que-é-?)
 - [Instalação](#Instalação)
 - [Contatos](#Contato)
+- [Desbloqueio ou bloqueio do .nsfwloli](#Desbloqueio-ou-bloqueio-do-.nsfwloli)
 
 # O que é ?
 
